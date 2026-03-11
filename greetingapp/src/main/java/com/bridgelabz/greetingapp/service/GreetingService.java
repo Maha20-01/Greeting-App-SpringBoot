@@ -3,6 +3,7 @@ package com.bridgelabz.greetingapp.service;
 import com.bridgelabz.greetingapp.entity.Greeting;
 import com.bridgelabz.greetingapp.repository.GreetingRepository;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class GreetingService {
@@ -31,5 +32,9 @@ public class GreetingService {
     }
     public Greeting getGreetingById(Long id) {
         return greetingRepository.findById(id).orElse(null);
+    }
+
+    public List<Greeting> getAllGreetings() {
+        return greetingRepository.findAll();
     }
 }
